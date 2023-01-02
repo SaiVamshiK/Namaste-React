@@ -4,3 +4,5 @@ In the console of the browser if we type React or ReactDOM we see a dictionary, 
 React is the core library. This will always be there.
 ReactDOM is the library for the DOM.
 It is the code Facebook developers have written for us.
+IMP : The script tags are loaded in order. So you need to keep your tags in order for using React.
+So get the React script tag and ReactDOM tag first then the script tag of the actual manipulation in order to avoid error. 
