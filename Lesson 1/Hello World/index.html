@@ -9,25 +9,14 @@
   <body>
     <div id="header">Header</div>
     <div id="root">
-        <h1>Replacable Content</h1>
-        <h1>Replacable Content</h1>
-        <!-- This Replacable content will be visible for a few milliseconds time and then it is replaced by react. This lag is there because the browser needs some time in order to load the scripts. We can optimize this time but cannot make it to 0. -->
+      <h1>Replacable Content</h1>
+      <h1>Replacable Content</h1>
+      <!-- This Replacable content will be visible for a few milliseconds time and then it is replaced by react. This lag is there because the browser needs some time in order to load the scripts. We can optimize this time but cannot make it to 0. -->
     </div>
     <!-- Only in the root div tag React is rendered. In other tags it is plain HTML -->
     <!-- Suppose we have a big project where we want to make just the search bar use React then we do it by adding the root as the search bar element -->
     <div id="footer">Footer</div>
   </body>
-  <script>
-    const heading = React.createElement("h1", {
-        id : "heading"
-    }, "Hello World");
-    console.log(heading)
-    // React element "heading" is a JS object 
-    const root = ReactDOM.createRoot(document.getElementById("root"));
-    // We tell React what is our root element
-    // Generally we have one root in our React app
-    root.render(heading);
-  </script>
   <script
     crossorigin
     src="https://unpkg.com/react@18/umd/react.development.js"
@@ -36,4 +25,20 @@
     crossorigin
     src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
   ></script>
+  <script>
+    const heading = React.createElement(
+      "h1",
+      {
+        id: "heading",
+        className : "class1"
+      },
+      "Hello World"
+    );
+    console.log(heading);
+    // React element "heading" is a JS object
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    // We tell React what is our root element
+    // Generally we have one root in our React app
+    root.render(heading);
+  </script>
 </html>
