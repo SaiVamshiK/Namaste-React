@@ -6,3 +6,16 @@ ReactDOM is the library for the DOM.
 It is the code Facebook developers have written for us.
 IMP : The script tags are loaded in order. So you need to keep your tags in order for using React.
 So get the React script tag and ReactDOM tag first then the script tag of the actual manipulation in order to avoid error. 
+
+Libraries provide developers with predefined functions and classes to make their work easier and boost the development process.
+
+Framework, on the other hand, is like the foundation upon which developers build applications for specific platforms. 
+
+React is named React because of its ability to react to changes in data. When the data in a React component changes, React will automatically re-render the component so that it reflects the new data.
+
+The react package holds the react source for components, state, props and all the code that is react.
+The react-dom package as the name implies is the glue between React and the DOM. 
+
+React has 2 script tags for development and 2 script tags for production.
+The production script tags is to optimize the applications performance.
+
