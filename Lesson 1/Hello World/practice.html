@@ -27,5 +27,9 @@
     const heading2 = React.createElement("h2", {}, "Heading 2");
     const root = ReactDOM.createRoot(document.getElementById("root"));
     root.render([heading1, heading2]);
+    // react-dom.development.js:73 Warning: Each child in a list should have a unique "key" prop.
+    // In order to avoid the error we need to assign a unique key prop for each element in the list.
+    // Keys help React identify which items have changed, are added, or are removed. 
+    //Keys should be given to the elements inside the array to give the elements a stable identity.
   </script>
 </html>
