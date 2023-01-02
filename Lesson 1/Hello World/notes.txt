@@ -1,1 +1,6 @@
 React is a JS Library.
+By adding the 2 script tags we have imported React.
+In the console of the browser if we type React or ReactDOM we see a dictionary, code which we can use.
+React is the core library. This will always be there.
+ReactDOM is the library for the DOM.
+It is the code Facebook developers have written for us.

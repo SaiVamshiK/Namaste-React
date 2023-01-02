@@ -17,4 +17,10 @@
     crossorigin
     src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
   ></script>
+  <script>
+    const heading = React.createElement("h1", {}, "Hello World");
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    // We tell React what is our root element
+    root.render(heading);
+  </script>
 </html>
