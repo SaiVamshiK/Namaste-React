@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Namaste React</title>
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
     <div id="header">Header</div>
@@ -25,20 +26,7 @@
     crossorigin
     src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
   ></script>
-  <script>
-    const heading = React.createElement(
-      "h1",
-      {
-        id: "heading",
-        className : "class1"
-      },
-      "Hello World"
-    );
-    console.log(heading);
-    // React element "heading" is a JS object
-    const root = ReactDOM.createRoot(document.getElementById("root"));
-    // We tell React what is our root element
-    // Generally we have one root in our React app
-    root.render(heading);
+  <script src="App.js">
+    
   </script>
 </html>
