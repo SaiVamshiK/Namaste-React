@@ -11,3 +11,10 @@ npm != node package manager.
 
 npm is used as a package manager in order to manage all our packages.
 
+Initialize a package manager : npm init. Go with all defaults and create it.
+(npm init -y is to skip some stuff)
+
+React cannot be just with importing react and reactDOM, we need npm as well. It is like maven for UI.
+React needs npm because of the requirement of lot of other packages that are bundled for optimizing, minifying etc. the code.
+The packages are present by using npm.
+

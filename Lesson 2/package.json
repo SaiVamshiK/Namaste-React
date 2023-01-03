@@ -1,0 +1,11 @@
+{
+  "name": "lesson-2",
+  "version": "1.0.0",
+  "description": "Lesson 2",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
