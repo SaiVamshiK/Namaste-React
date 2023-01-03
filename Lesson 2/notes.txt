@@ -1,0 +1,13 @@
+Webpack, parcel and vite are the types of bundler.
+
+Most bundlers do the same job : minify the code, remove console logs and do a lot of optimizations.
+
+Bundling is the process of following imported files and merging them into a single file: a “bundle”. This bundle can then be included on a webpage to load an entire app at once.
+
+create-react-app uses Webpack as the bundler.
+
+npm, yarn is a package manager.
+npm != node package manager.
+
+npm is used as a package manager in order to manage all our packages.
+
