@@ -18,3 +18,8 @@ React cannot be just with importing react and reactDOM, we need npm as well. It 
 React needs npm because of the requirement of lot of other packages that are bundled for optimizing, minifying etc. the code.
 The packages are present by using npm.
 
+For igniting app we use parcel.
+npm install -D parcel is to get parcel bundler into our project. (-D means dev dependency)
+dependency means all the packages our project needs.
+-D means it is there only on our development machine not production.
+
