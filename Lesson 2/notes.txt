@@ -23,3 +23,10 @@ npm install -D parcel is to get parcel bundler into our project. (-D means dev d
 dependency means all the packages our project needs.
 -D means it is there only on our development machine not production.
 
+package.json has ^2.8.2 as the caret version. This means that the parcel version will automatically upgrade itself if needed. 
+Whereas for package-lock.json we have the exact version of parcel running 2.8.2. This basically locks the version of the package we are using so that there is no uncertainity.
+
+
+
+
+Learn about tilde and caret for versions.
