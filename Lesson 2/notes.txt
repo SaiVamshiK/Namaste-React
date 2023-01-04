@@ -22,11 +22,21 @@ For igniting app we use parcel.
 npm install -D parcel is to get parcel bundler into our project. (-D means dev dependency)
 dependency means all the packages our project needs.
 -D means it is there only on our development machine not production.
+If we do not use -D then the package is for global environment.
 
 package.json has ^2.8.2 as the caret version. This means that the parcel version will automatically upgrade itself if needed. 
 Whereas for package-lock.json we have the exact version of parcel running 2.8.2. This basically locks the version of the package we are using so that there is no uncertainity.
+IMP :
+package-lock.json : locks the version. Do not keep it in .gitignore.
+To know what exact version of the application is running in production we use package-lock.json. The package-lock.json maintains the hash of the version as well.
 
+npm install -D parcel will create the package-lock.json and node modules folder.
+Whenever we install something it goes into node modules.
+parcel is there in node modules. 
+As we want to have a production ready code for our application, we need more packages other than just React in order to minify, bundle, optimize etc. our web application. In order to do all these we installed parcel and thus installed a lot of packages along with it.
 
+WE MUST NEVER HAVE node modules IN OUR GIT REPOSITORY.
+It is because node modules are heavy and also our package-lock.json has enough information to recreate node modules on our server.
+WE WILL GENERATE node modules on server. We just ship package-json.json which recreates it in server.
 
-
-Learn about tilde and caret for versions.
+Learn about tilde(~) and caret(^) for versions.
