@@ -40,3 +40,11 @@ It is because node modules are heavy and also our package-lock.json has enough i
 WE WILL GENERATE node modules on server. We just ship package-json.json which recreates it in server.
 
 Learn about tilde(~) and caret(^) for versions.
+
+Getting react into app via CDN is not a good way to bring react into our app. Since when the React version changes we manually have to change the CDN links. 
+Also when we deploy the our app into prod server we will fetch react from CDN. Instead of that it is faster to fetch
+it from our server. 
+So install React and ReactDOM into node modules for that.
+npm install react : for installing react into our node modules. No -D since we want it our prod server as well.
+npm install react-dom : for installing react-DOM into our node modules.
+
