@@ -66,3 +66,33 @@ parcel uses parcel cache in order to do its functionalities like hot module relo
 After running npx parcel index.html, parcel will bundle all our code (minifying) into files which are present in dist folder.
 All our code is bundled and minifyed into 3 files present in dist folder by parcel. 
 Only these build files will be in production.
+We will find no console logs in our minifyed code present in dist folder since it has to be in production.
+
+npx parcel build index.html : This will build the production build for our application.
+
+When we have to deploy application to production, we are basically deploying a minifyed version of our app build into production. 
+parcel does all the stuff of minifying our code, packages etc.
+parcel does image optimizations as well.
+parcel also does caching while development.
+parcel also makes sure the application is compatible with other browsers.
+parcel manages port number as well.
+parcel.cache must be kept in .gitignore.
+Anything which is auto generated on server can be kept in gitignore.
+parcel is a zero config bundler.
+React is MODI,then Parcel is Amit Shah.
+Transitive dependencies are present in our application here: Parcel has some dependencies for it to exist, those dependencies have some other dependencies to exist.
+Package manager takes care of the transitive dependencies present in our code.
+
+SUMMARY :
+When we are building a production ready app we need to do a lot of things:
+->Bundling
+->Minification
+->Optimizations
+->Caching
+->Cleaning our code
+->Hot Module Replacement (HMR)
+->Making it compatible with older browsers.
+etc. and we cannot do this alone, we need some dependencies (e.g. parcel).
+When we use dependencies those are also dependent on other dependencies which makes a dependency tree. These are transitive dependency.
+
+browserlist is a dependency used by parcel in order to make our application compatible with all browsers.
