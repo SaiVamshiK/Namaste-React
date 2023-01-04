@@ -51,4 +51,9 @@ npm install react-dom : for installing react-DOM into our node modules.
 To ignite the app : npx parcel index.html.
 npx for execute.
 Parcel has given the local server for us.
+We get the error of React not defined since we have removed the script tags and installed it in our node modules folder.
 
+In order to use it import it from the node modules folder.
+Now even after importing we see an error in the browser that imports and exports cannot work.
+This is because our browser does not know about import , since it considers App.js as a plain JS file.
+We need to tell the browser that the App.js is a module.
