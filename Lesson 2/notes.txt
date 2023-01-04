@@ -48,3 +48,7 @@ So install React and ReactDOM into node modules for that.
 npm install react : for installing react into our node modules. No -D since we want it our prod server as well.
 npm install react-dom : for installing react-DOM into our node modules.
 
+To ignite the app : npx parcel index.html.
+npx for execute.
+Parcel has given the local server for us.
+
