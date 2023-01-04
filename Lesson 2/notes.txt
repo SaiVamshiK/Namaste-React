@@ -57,3 +57,12 @@ In order to use it import it from the node modules folder.
 Now even after importing we see an error in the browser that imports and exports cannot work.
 This is because our browser does not know about import , since it considers App.js as a plain JS file.
 We need to tell the browser that the App.js is a module.
+
+Hot module reload is the functionality given by parcel.
+This functionality gives the changes in UI just by saving the file.
+File watcher algorithm (written in C++) is used by parcel in order to keep track of the changes in the files.
+parcel uses parcel cache in order to do its functionalities like hot module reloading, minifying etc.
+
+After running npx parcel index.html, parcel will bundle all our code (minifying) into files which are present in dist folder.
+All our code is bundled and minifyed into 3 files present in dist folder by parcel. 
+Only these build files will be in production.
