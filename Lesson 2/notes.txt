@@ -96,3 +96,28 @@ etc. and we cannot do this alone, we need some dependencies (e.g. parcel).
 When we use dependencies those are also dependent on other dependencies which makes a dependency tree. These are transitive dependency.
 
 browserlist is a dependency used by parcel in order to make our application compatible with all browsers.
+
+A react app is powered by a lot of things : minifying, optimizing etc. for all these we need a lot of helper packages. The helper packages are managed by npm.
+
+npm install -D parcel : -D means dev dependency. This means parcel is installed as a dev dependency. -D means the parcel dependency is only for development, it is not for production.
+package-lock.json locks the versiono parcel. We never put it in gitignore.
+We should not add node_modules to gitignore. Since we can regenerate node_modules with package-lock.json in production.
+We install react as : npm install react. No -D since it is not a dev dependency. It is better to install react and react-dom in our app instead of using CDN. Since fetching from our own production server is better than fetching from the external CDN server.
+npx parcel index.html : to ignite our app.
+For Imports and exports to work for js files we need to tell the browser that they are modules with the type='module' in script tag.
+Hot module Replacement is done by parcel. HMR is done using file watcher algorithm(C++).
+parcel cache folder is used for maintaining the cache for the web app to reload faster.
+IMP:
+dist folder keeps the minifyed files for us.
+npx parcel index.html : this just creates a development build for us and serves it on the server.
+npx parcel build index.html : this creates a production ready build for us, by doing a lot of optimizations for production server. This command creates 3 files for us.
+These files will have the optimized code.
+
+Parcel does bundling, cleaning of code, HMR, etc.
+Parcel helps in making our app compatible with a lot of versions of browsers using the browserlists.
+Parcel handles the port numbers as well. Launching 2 react projects at the same time in our machine creates 2 different ports for the 2 applications automatically.
+
+npx parcel index.html : takes 400 ms in order to execute the command. This is for creating the dev build, parcel cache for us. While creating the dev build minification is not done. Minification is done for production build.
+
+Read about caret and tilde in package.json.
+
