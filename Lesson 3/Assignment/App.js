@@ -23,13 +23,35 @@ import ReactDOM from "react-dom/client";
 //     </>
 // );
 
+// const ContainerComponent = () => {
+//   return (
+//     <>
+//       <div className="title">
+//         <h1>Heading1</h1>
+//         <h1>Heading2</h1>
+//         <h1>Heading3</h1>
+//       </div>
+//     </>
+//   );
+// };
+
+const Heading1 = () => {
+  return <h1>Heading1</h1>;
+};
+const Heading2 = () => {
+  return <h1>Heading2</h1>;
+};
+const Heading3 = () => {
+  return <h1>Heading3</h1>;
+};
+
 const ContainerComponent = () => {
   return (
     <>
       <div className="title">
-        <h1>Heading1</h1>
-        <h1>Heading2</h1>
-        <h1>Heading3</h1>
+        <Heading1 />
+        <Heading2 />
+        <Heading3 />
       </div>
     </>
   );
