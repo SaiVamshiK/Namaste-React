@@ -15,4 +15,4 @@ const HeaderComponent = () => {
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
+root.render(<HeaderComponent/>);
