@@ -13,15 +13,27 @@ import ReactDOM from "react-dom/client";
 // const container = React.createElement('div',{
 //     class : 'title'
 // },[heading1,heading2,heading3]);
-const container = (
-    <>
-        <div className ='title'>
-            <h1>Heading1</h1>
-            <h1>Heading2</h1>
-            <h1>Heading3</h1>
-        </div>
-    </>
-);
+// const container = (
+//     <>
+//         <div className ='title'>
+//             <h1>Heading1</h1>
+//             <h1>Heading2</h1>
+//             <h1>Heading3</h1>
+//         </div>
+//     </>
+// );
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(container);
+const ContainerComponent = () => {
+  return (
+    <>
+      <div className="title">
+        <h1>Heading1</h1>
+        <h1>Heading2</h1>
+        <h1>Heading3</h1>
+      </div>
+    </>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<ContainerComponent />);
