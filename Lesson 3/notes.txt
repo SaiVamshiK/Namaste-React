@@ -30,3 +30,6 @@ We need to configure to remove it from console logs from the build code.
 We can use npm docs for configurations.
 After creation of the .babelrc file and configuring the plugin we again build our code : npm run build. 
 Now we see that in our build code present in dist folder we do not have any console logs.
+
+If we have multiple siblings in a div then each of the tag(sibling) must have a key. This is to uniquely identify each tag.
+Whenever we have an array each element should have keys.
