@@ -1,2 +1,15 @@
 If we give "last 2 Chrome versions" for browserslist in package.json does not mean that it will only work on Chrome.
 It means it will definetely work on Chrome.
+
+If our browser does not understand promises code ot any ES6 code, then to make it compatible it is converted into the code that is compatible with the browser to understand and execute.
+
+If the browser does not understand the following code:
+arr.map(), then this code is converted into an older version of code which can be understood by the browser. 
+THIS CONVERSION IS DONE BY BABEL. The converted older code is called POLYFILL.
+Babel uses browserslist in order to know on which browsers our application HAS to run on.
+Babel is just a JS library which just convertes our newer code into an older version of code that can be understood by browser.
+
+Parcel does optimization : to be specific IMAGE optimization, JS code optimization by minifying the code.
+Parcel does tree shaking : removing unwanted code.
+If we import a library in our code that provides us with 100 functions, but in our logic we use only 1 or 2 functions, then parcel ignores all the remaining functions.
+This is tree shaking.
