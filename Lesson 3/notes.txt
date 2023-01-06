@@ -20,3 +20,8 @@ Command : npm run start/npm start : for running the start.
 npm : to install packages.
 npx : to execute package.
 npm run === npx
+
+IMP :
+Parcel directly does not remove console logs. We need to install plugins in order to remove console logs.
+babel-plugin-transform-remove-console is the plugin we need to use for removing console logs.
+Command : npm install babel-plugin-transform-remove-console --save-dev
