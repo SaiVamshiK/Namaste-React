@@ -24,4 +24,7 @@ npm run === npx
 IMP :
 Parcel directly does not remove console logs. We need to install plugins in order to remove console logs.
 babel-plugin-transform-remove-console is the plugin we need to use for removing console logs.
-Command : npm install babel-plugin-transform-remove-console --save-dev
+Command : npm install babel-plugin-transform-remove-console --save-dev (or -D)
+If we run the build "npm run build" : it will not yet remove the console logs in the minifyed code (present in dist folder).
+We need to configure to remove it from console logs from the build code. 
+We can use npm docs for configurations.
