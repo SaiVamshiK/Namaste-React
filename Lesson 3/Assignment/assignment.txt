@@ -1,0 +1,23 @@
+JSX : HTML Like syntax in JS Code. It is not HTML in JS.
+
+React.createElement Vs JSX:
+React.createElement returns a JS object which inturn changes it into HTML code.
+React.createElement => JS Object => HTML Code.
+JSX avoids the use of multiple React.createElement functions. In the background JSX uses React.createElement to render HTML code. Babel is used for this.
+JSX => React.createElement => JS Object => HTML Code.
+
+Benefits of JSX:
+Improves readability. Makes developer life easy. 
+
+Babel Role in JSX:
+Babel converts JSX => React.createElement => JS Object => HTML Code.
+Parcel uses babel as a transitive dependency.
+
+Components :
+Functional Component : JS Function that returns a JSX code.
+Composing Component : This means using muliple components within a single Functional Component.
+
+{TitleComponent} : where we are injecting a JS variable into JSX.
+{<TitleComponent/>} : where we are injecting a React Functional Component into JSX.
+{<TitleComponent><TitleComponent/>} : where we are injecting a HTML like tag in JSX.
+
