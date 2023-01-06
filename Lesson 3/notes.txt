@@ -46,3 +46,5 @@ There are 2 types of components in React:
 Functional Component (new way of writing code) and Class Component.
 Functional Component is a JS Function that returns JSX or React element.
 
+JSX does sanitization in order to secure our application from hacking.
+Using a component inside an other component it called Component Composition.
