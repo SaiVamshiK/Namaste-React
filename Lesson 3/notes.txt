@@ -1,0 +1,2 @@
+If we give "last 2 Chrome versions" for browserslist in package.json does not mean that it will only work on Chrome.
+It means it will definetely work on Chrome.
