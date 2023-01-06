@@ -33,3 +33,6 @@ Now we see that in our build code present in dist folder we do not have any cons
 
 If we have multiple siblings in a div then each of the tag(sibling) must have a key. This is to uniquely identify each tag.
 Whenever we have an array each element should have keys.
+React.createElement returns a JS object. The object is converted to HTML which is rendered on DOM.
+
+
