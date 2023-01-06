@@ -7,5 +7,12 @@ const heading = (
     </h1>
   </>
 );
+
+const HeaderComponent = () => {
+    return (
+        <h1>My first Functional Component</h1>
+    );
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(heading);

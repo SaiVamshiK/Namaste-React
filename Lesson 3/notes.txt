@@ -41,3 +41,8 @@ Babel is the JS library that executes the JSX code.
 React.createElement => JS Object => HTML which is rendered on DOM.
 JSX => React.createElement => JS object => HTML which is rendered on DOM. This is done by Babel.
 Babel comes as a dependency along with parcel.
+
+There are 2 types of components in React:
+Functional Component (new way of writing code) and Class Component.
+Functional Component is a JS Function that returns JSX or React element.
+
