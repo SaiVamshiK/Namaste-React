@@ -7,12 +7,17 @@ const heading = (
     </h1>
   </>
 );
+// Above is the JSX which inturn is a React element.
 
 const HeaderComponent = () => {
-    return (
-        <h1>My first Functional Component</h1>
-    );
-}
+  return (
+    <>
+        {heading}
+      <h1>My first Functional Component</h1>
+    </>
+  );
+};
+// Above is a Functional Component.
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeaderComponent/>);
+root.render(<HeaderComponent />);
