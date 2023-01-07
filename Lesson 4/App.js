@@ -41,7 +41,7 @@ const Footer = () => {
 
 const AppLayout = () => {
   return (
-    <>
+    <React.Fragment>
         {/* Header
             - Logo
             - Navbar Items (Right Side)
@@ -60,7 +60,7 @@ const AppLayout = () => {
         <Header/> 
         <Body/>
         <Footer/>
-    </>
+    </React.Fragment>
   );
 };
 
