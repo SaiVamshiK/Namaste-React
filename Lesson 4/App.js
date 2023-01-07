@@ -7,16 +7,21 @@ const Title = () => {
   );
 };
 
+const styleObject = {
+    color : "blue"
+};
+
+
 const Header = () => {
   return (
     <div className="header">
       <Title />
       <div className="nav-items">
         <ul>
-            <li>Home </li>
-            <li>About </li>
-            <li>Contact Us </li>
-            <li>Cart </li>
+            <li style={styleObject}>Home </li>
+            <li style={styleObject}>About </li>
+            <li style={styleObject}>Contact Us </li>
+            <li style={styleObject}>Cart </li>
         </ul>
       </div>
     </div>
