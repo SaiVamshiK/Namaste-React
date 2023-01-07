@@ -53,15 +53,15 @@ const restaurantList = [
   },
 ];
 
-const RestaurantCard = (props) => {
+const RestaurantCard = ({restaurant}) => {
   return (
     <div className="card">
       <img
-        src={props.restaurant.image}
+        src={restaurant.image}
       />
-      <h2>{props.restaurant.name}</h2>
-      <h3>{props.restaurant.cuisines.join(', ')}</h3>
-      <h4>{props.restaurant.rating} stars</h4>
+      <h2>{restaurant.name}</h2>
+      <h3>{restaurant.cuisines.join(', ')}</h3>
+      <h4>{restaurant.rating} stars</h4>
     </div>
   );
 };
