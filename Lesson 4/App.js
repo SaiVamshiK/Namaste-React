@@ -32,22 +32,22 @@ const Header = () => {
 };
 
 const config = [
-    {
-        type : "carousel",
-        cards : []
-    },
-    {
-        type : "restuarants",
-        cards : [
-            {
-                image:
-                  "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2VyJTIwa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80",
-                name: "Burger King",
-                cuisine: ["Burgers", "American"],
-                rating: 4.2,
-              },
-        ]
-    },
+  {
+    type: "carousel",
+    cards: [],
+  },
+  {
+    type: "restuarants",
+    cards: [
+      {
+        image:
+          "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2VyJTIwa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80",
+        name: "Burger King",
+        cuisine: ["Burgers", "American"],
+        rating: 4.2,
+      },
+    ],
+  },
 ];
 
 const restaurantList = [
@@ -77,18 +77,17 @@ const restaurantList = [
       "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2VyJTIwa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80",
     name: "Burger King",
     cuisine: ["Burgers", "American"],
-    rating: 4.2,
-  }
+    rating: 4.4,
+  },
 ];
 
-const RestaurantCard = (props) => {
-    console.log(props)
+const RestaurantCard = ({ restaurant }) => {
   return (
     <div className="card">
-      <img alt="card" src={props.restaurant.image} />
-      <h2>{props.restaurant.name}</h2>
-      <h3>{props.restaurant.cuisine.join(", ")}</h3>
-      <h4>{props.restaurant.rating} stars</h4>
+      <img alt="card" src={restaurant.image} />
+      <h2>{restaurant.name}</h2>
+      <h3>{restaurant.cuisine.join(", ")}</h3>
+      <h4>{restaurant.rating} stars</h4>
     </div>
   );
 };
@@ -97,8 +96,11 @@ const RestaurantCard = (props) => {
 const Body = () => {
   return (
     <div className="restaurant-list">
-      {restaurantList.map((elem) => <RestaurantCard restaurant={elem}/>)}
+      {restaurantList.map((elem) => (
+        <RestaurantCard restaurant={elem} key={elem.rating} />
+      ))}
     </div>
+    // Used elem.rating temporarily since it is unique for now.
   );
 };
 

@@ -4,3 +4,28 @@ React.Fragment is like an empty tag
 Config Driven UI : When we build a real world app, we want our app to work in different locations. 
 Config Driven UI helps in rendering location specific application.
 Backend controls what type of website should be rendered.
+
+Virtual DOM : 
+<head>
+    <body>
+        <Restaurant1>
+        <Restaurant2> <img>
+        <Restaurant3>
+    <Footer>
+Virtual DOM is not just a React concept. We keep a representation of the original DOM with us which is a Virtual DOM.
+Why Virtual DOM?
+For reconciliation in React. It is an algorithm that React uses to diff one tree from another. This determines what needs to change in original DOM and what need not change in the original DOM. 
+When change is detected it will re-render only that changed part.
+In the above HTML, if Restaurant2 is changed, it should only re-render that element and its children.
+When 2 or more siblings are of the same tag and if we add another same tag then React gets confused about which tag to render where. So keys are necessary to identify about each tag.
+React uses Virtual DOM (representation of actual DOM). React uses reconciliation. It is the process where we have a diff algorithm, which finds out the difference between 2 trees. And it re-renders only the changed part.
+When we give a key, React knows exactly what should be re-rendered.
+If we do not give a key, React re-renders everything.
+React Fiber is a new reconciliation engine which is responsible for diff algorithm.
+If the siblings are of different tags then we need not put keys as it is uniquely identified by tags.
+
+TO DO:
+Practise Destructuring.
+Use spread operator.
+Why do we not use index as a key in arr.map(), even though it is valid.
+No key(not acceptable) < index key(Not a good way, OK way) < unique key (best way).
