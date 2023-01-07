@@ -77,10 +77,10 @@ const restaurantList = [
 const RestaurantCard = () => {
   return (
     <div className="card">
-      <img alt="card" src={burgerKing.image} />
-      <h2>{burgerKing.name}</h2>
-      <h3>{burgerKing.cuisine.join(", ")}</h3>
-      <h4>{burgerKing.rating} stars</h4>
+      <img alt="card" src={restaurantList[0].image} />
+      <h2>{restaurantList[0].name}</h2>
+      <h3>{restaurantList[0].cuisine.join(", ")}</h3>
+      <h4>{restaurantList[0].rating} stars</h4>
     </div>
   );
 };
