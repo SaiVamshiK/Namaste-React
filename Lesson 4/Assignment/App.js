@@ -29,10 +29,47 @@ const Header = () => {
   );
 };
 
+const restaurantList = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2VyJTIwa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80",
+    name: "Burger King",
+    cuisines: ["Indian", "Chinese"],
+    rating: 4.4,
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2VyJTIwa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80",
+    name: "KFC",
+    cuisines: ["Bengali", "Japanese"],
+    rating: 4.2,
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2VyJTIwa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80",
+    name: "Pista House",
+    cuisines: ["American", "Europian"],
+    rating: 4.8,
+  },
+];
+
+const RestaurantCard = (props) => {
+  return (
+    <div className="card">
+      <img
+        src={props.restaurant.image}
+      />
+      <h2>{props.restaurant.name}</h2>
+      <h3>{props.restaurant.cuisines.join(', ')}</h3>
+      <h4>{props.restaurant.rating} stars</h4>
+    </div>
+  );
+};
+
 const Body = () => {
   return (
-    <div>
-      <h1>Body</h1>
+    <div className="restaurant-list">
+      {restaurantList.map((restaurant,index) => <RestaurantCard restaurant={restaurant} key={index}/>)}
     </div>
   );
 };
