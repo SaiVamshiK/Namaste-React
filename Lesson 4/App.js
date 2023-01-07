@@ -31,25 +31,62 @@ const Header = () => {
   );
 };
 
-const burgerKing = {
-    image : "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2VyJTIwa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80",
-    name : "Burger King",
-    cuisine : [
-        "Burgers",
-        "American"
-    ],
-    rating : 4.2
-}
+const config = [
+    {
+        type : "carousel",
+        cards : [
+            {
+                offerName : "50% off"
+            },
+            {
+                offerName : "No delivery charge"
+            }
+        ]
+    },
+    {
+        type : "restuarants",
+        cards : [
+            {
+                image:
+                  "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2VyJTIwa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80",
+                name: "Burger King",
+                cuisine: ["Burgers", "American"],
+                rating: 4.2,
+              },
+        ]
+    },
+];
+
+const restaurantList = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2VyJTIwa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80",
+    name: "Burger King",
+    cuisine: ["Burgers", "American"],
+    rating: 4.2,
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2VyJTIwa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80",
+    name: "Burger King",
+    cuisine: ["Burgers", "American"],
+    rating: 4.2,
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2VyJTIwa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80",
+    name: "Burger King",
+    cuisine: ["Burgers", "American"],
+    rating: 4.2,
+  }
+];
 
 const RestaurantCard = () => {
   return (
     <div className="card">
-      <img
-        alt="card"
-        src={burgerKing.image}
-      />
+      <img alt="card" src={burgerKing.image} />
       <h2>{burgerKing.name}</h2>
-      <h3>{burgerKing.cuisine.join(', ')}</h3>
+      <h3>{burgerKing.cuisine.join(", ")}</h3>
       <h4>{burgerKing.rating} stars</h4>
     </div>
   );
@@ -57,8 +94,8 @@ const RestaurantCard = () => {
 
 const Body = () => {
   return (
-    <div>
-        <RestaurantCard/>
+    <div className="restaurant-list">
+      <RestaurantCard />
     </div>
   );
 };

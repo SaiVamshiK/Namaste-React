@@ -1,3 +1,6 @@
 JSX can have 1 parent element only.
 React.Fragment is a component exported by "react" library.
 React.Fragment is like an empty tag
+Config Driven UI : When we build a real world app, we want our app to work in different locations. 
+Config Driven UI helps in rendering location specific application.
+Backend controls what type of website should be rendered.
