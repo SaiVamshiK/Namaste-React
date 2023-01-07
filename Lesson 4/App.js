@@ -55,14 +55,14 @@ const restaurantList = [
     image:
       "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2VyJTIwa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80",
     name: "Burger King",
-    cuisine: ["Burgers", "American"],
+    cuisine: ["Europian", "Asian"],
     rating: 4.2,
   },
   {
     image:
       "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2VyJTIwa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80",
     name: "Burger King",
-    cuisine: ["Burgers", "American"],
+    cuisine: ["Japanese", "Chinese"],
     rating: 4.6,
   },
   {
@@ -81,13 +81,14 @@ const restaurantList = [
   }
 ];
 
-const RestaurantCard = (restaurant) => {
+const RestaurantCard = (props) => {
+    console.log(props)
   return (
     <div className="card">
-      <img alt="card" src={restaurant.restaurant.image} />
-      <h2>{restaurant.restaurant.name}</h2>
-      <h3>{restaurant.restaurant.cuisine.join(", ")}</h3>
-      <h4>{restaurant.restaurant.rating} stars</h4>
+      <img alt="card" src={props.restaurant.image} />
+      <h2>{props.restaurant.name}</h2>
+      <h3>{props.restaurant.cuisine.join(", ")}</h3>
+      <h4>{props.restaurant.rating} stars</h4>
     </div>
   );
 };
