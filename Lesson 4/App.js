@@ -63,7 +63,14 @@ const restaurantList = [
       "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2VyJTIwa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80",
     name: "Burger King",
     cuisine: ["Burgers", "American"],
-    rating: 4.2,
+    rating: 4.6,
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2VyJTIwa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80",
+    name: "KFC",
+    cuisine: ["Indian", "American"],
+    rating: 4.9,
   },
   {
     image:
@@ -74,21 +81,25 @@ const restaurantList = [
   }
 ];
 
-const RestaurantCard = () => {
+const RestaurantCard = (restaurant) => {
   return (
     <div className="card">
-      <img alt="card" src={restaurantList[0].image} />
-      <h2>{restaurantList[0].name}</h2>
-      <h3>{restaurantList[0].cuisine.join(", ")}</h3>
-      <h4>{restaurantList[0].rating} stars</h4>
+      <img alt="card" src={restaurant.restaurant.image} />
+      <h2>{restaurant.restaurant.name}</h2>
+      <h3>{restaurant.restaurant.cuisine.join(", ")}</h3>
+      <h4>{restaurant.restaurant.rating} stars</h4>
     </div>
   );
 };
 
+// Passing props
 const Body = () => {
   return (
     <div className="restaurant-list">
-      <RestaurantCard />
+      <RestaurantCard restaurant = {restaurantList[0]}/>
+      <RestaurantCard restaurant = {restaurantList[1]}/>
+      <RestaurantCard restaurant = {restaurantList[2]}/>
+      <RestaurantCard restaurant = {restaurantList[3]}/>
     </div>
   );
 };
