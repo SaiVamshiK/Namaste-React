@@ -34,14 +34,7 @@ const Header = () => {
 const config = [
     {
         type : "carousel",
-        cards : [
-            {
-                offerName : "50% off"
-            },
-            {
-                offerName : "No delivery charge"
-            }
-        ]
+        cards : []
     },
     {
         type : "restuarants",
