@@ -11,9 +11,16 @@ const Title = () => {
 
 const HeadingComponent = () => {
   return (
-    <div>
+    <div className="header">
       <Title />
-      <h1>Heading</h1>
+      <div className="nav-items">
+        <ul>
+            <li>Home </li>
+            <li>About </li>
+            <li>Contact Us </li>
+            <li>Cart </li>
+        </ul>
+      </div>
     </div>
   );
 };
@@ -36,6 +43,7 @@ const AppLayout = () => {
         Footer
             - Reference Links
             - CopyRights */}
+        
     </>
   );
 };
