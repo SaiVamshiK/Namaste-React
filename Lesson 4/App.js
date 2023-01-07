@@ -11,9 +11,31 @@ const Title = () => {
 
 const HeadingComponent = () => {
   return (
-    <>
+    <div>
       <Title />
       <h1>Heading</h1>
+    </div>
+  );
+};
+
+const AppLayout = () => {
+  return (
+    <>
+        {/* Header
+            - Logo
+            - Navbar Items (Right Side)
+            - Cart 
+        Body
+            - Search Bar
+            - List of Restaurants (Restaurants Cards)
+                - RestaurantCard
+                    - Image
+                    - Name of Restaurant
+                    - Rating
+                    - Cuisines
+        Footer
+            - Reference Links
+            - CopyRights */}
     </>
   );
 };
