@@ -97,10 +97,7 @@ const RestaurantCard = (props) => {
 const Body = () => {
   return (
     <div className="restaurant-list">
-      <RestaurantCard restaurant = {restaurantList[0]}/>
-      <RestaurantCard restaurant = {restaurantList[1]}/>
-      <RestaurantCard restaurant = {restaurantList[2]}/>
-      <RestaurantCard restaurant = {restaurantList[3]}/>
+      {restaurantList.map((elem) => <RestaurantCard restaurant={elem}/>)}
     </div>
   );
 };
