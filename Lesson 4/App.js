@@ -3,13 +3,11 @@ import React from "react";
 
 const Title = () => {
   return (
-    <h1 id="title" key="h2">
-      Food Villa
-    </h1>
+    <img className="logo" alt="logo" src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"/>
   );
 };
 
-const HeadingComponent = () => {
+const Header = () => {
   return (
     <div className="header">
       <Title />
@@ -24,6 +22,22 @@ const HeadingComponent = () => {
     </div>
   );
 };
+
+const Body = () => {
+    return (
+        <>
+        <h4>Body</h4>
+        </>
+    );
+}
+
+const Footer = () => {
+    return (
+        <>
+        <h4>Footer</h4>
+        </>
+    );
+}
 
 const AppLayout = () => {
   return (
@@ -43,10 +57,12 @@ const AppLayout = () => {
         Footer
             - Reference Links
             - CopyRights */}
-        
+        <Header/> 
+        <Body/>
+        <Footer/>
     </>
   );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComponent />);
+root.render(<AppLayout />);

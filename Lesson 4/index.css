@@ -8,6 +8,10 @@
     display: flex;
 }
 .nav-items > ul > li {
-    
+
     padding: 10px;
+}
+.logo {
+    width: 50px;
+    
 }
