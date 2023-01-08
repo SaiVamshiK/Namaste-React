@@ -3,4 +3,7 @@ All Components must start with the capital letters.
 We can only export default one component.
 We can rename our Components as .jsx as well.
 .js or .jsx, anything can be used.
+config.js is used for maintaining constant values. Like for our static image URL's.
 
+TO DO:
+Implement React.Fragment type of Custom Component.

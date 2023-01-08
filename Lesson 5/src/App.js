@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { Footer } from "./components/Footer";
 import Body from "./components/Body";
 // default imports
-import Header from "./components/Header";
+import { Header } from "./components/Header";
 // named imports
 
 const AppLayout = () => {

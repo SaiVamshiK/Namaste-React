@@ -1,4 +1,4 @@
-const Title = () => {
+export const Title = () => {
   return (
     <a href="/">
       <img
@@ -10,7 +10,7 @@ const Title = () => {
   );
 };
 
-const Header = () => {
+export const Header = () => {
   return (
     <div className="header">
       <Title />
@@ -26,4 +26,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+
