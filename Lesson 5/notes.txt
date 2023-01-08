@@ -1,3 +1,6 @@
 All Components must start with the capital letters.
 2 ways to export Components.
 We can only export default one component.
+We can rename our Components as .jsx as well.
+.js or .jsx, anything can be used.
+

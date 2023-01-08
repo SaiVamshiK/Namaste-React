@@ -1,6 +1,16 @@
-import Title from "./Title";
+const Title = () => {
+  return (
+    <a href="/">
+      <img
+        className="logo"
+        alt="logo"
+        src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"
+      />
+    </a>
+  );
+};
 
-export const Header = () => {
+const Header = () => {
   return (
     <div className="header">
       <Title />
@@ -16,3 +26,4 @@ export const Header = () => {
   );
 };
 
+export default Header;
