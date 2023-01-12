@@ -3,7 +3,13 @@ All Components must start with the capital letters.
 We can only export default one component.
 We can rename our Components as .jsx as well.
 .js or .jsx, anything can be used.
+Preferable to use .js always.
 config.js is used for maintaining constant values. Like for our static image URL's.
+
+import { Footer } from "./components/Footer";
+The above statement is not called object destructuring.
 
 TO DO:
 Implement React.Fragment type of Custom Component.
+Use : import * as Obj from '/Component.js'.
+and use <Obj.Title/>

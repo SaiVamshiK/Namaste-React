@@ -9,8 +9,8 @@ import { Header } from "./components/Header";
 const AppLayout = () => {
   return (
     <>
-      <Header />
-      <Body />
+      <Header/>
+      <Body/>
       <Footer />
     </>
   );
