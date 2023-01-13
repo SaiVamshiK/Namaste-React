@@ -9,6 +9,10 @@ config.js is used for maintaining constant values. Like for our static image URL
 import { Footer } from "./components/Footer";
 The above statement is not called object destructuring.
 
+<input type="text" className="search-input" placeholder="Search" value=""/>
+The above input statement in JSX does not work, meaning we will not be able to write anything inside the input box.
+Same statement will work in index.html file where we will be able to edit it.
+
 TO DO:
 Implement React.Fragment type of Custom Component.
 Use : import * as Obj from '/Component.js'.
