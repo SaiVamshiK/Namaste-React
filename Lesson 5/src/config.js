@@ -22,4 +22,25 @@ export const restaurantList = [
     cuisines: ["American", "Europian"],
     rating: 4.8,
   },
+  {
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8bl_7LgbfEAa7668wSYn76S9MEDKr6SZdAQ&usqp=CAU",
+    name: "Bawarchi",
+    cuisines: ["Indian", "Mongolian"],
+    rating: 4.8,
+  },
+  {
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqYhIoLyLZutflX8De0aZAXYmvb7BlFSF2tw&usqp=CAU",
+    name: "Mehfil",
+    cuisines: ["Spanish", "Turkish"],
+    rating: 4.8,
+  },
+  {
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYqVgOpEl0pN0kQJjl726iDVx3KoE-RmeMvQ&usqp=CAU",
+    name: "Hurger House",
+    cuisines: ["Australian", "Nepalian"],
+    rating: 4.8,
+  }
 ];

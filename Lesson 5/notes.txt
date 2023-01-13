@@ -12,4 +12,4 @@ The above statement is not called object destructuring.
 TO DO:
 Implement React.Fragment type of Custom Component.
 Use : import * as Obj from '/Component.js'.
-and use <Obj.Title/>
+and use <Obj.Title/> 
