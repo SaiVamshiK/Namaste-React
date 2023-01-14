@@ -18,6 +18,13 @@ When we write 'a' it is getting printed as KFCa, if we then write 'q' it is gett
 IMP REASON:
 This is because in the input box we have kept the value = {searchTxt}, when we change the input , React re renders the whole component. Because of this, since the searchTxt is still KFC it has not been changed. searchTxt never got updated there.
 
+If we want to change a variable then we cannot use normal JS variables, we need to use React kind of variables.
+React variable is kind of a state variable.
+Every component in React maintains a state.
+We can put some variables onto that state.
+Everytime we create a local variable we use the state inside React.
+Everytime we need a local variable we create it using useState hook.
+
 TO DO:
 Implement React.Fragment type of Custom Component.
 Use : import * as Obj from '/Component.js'.
