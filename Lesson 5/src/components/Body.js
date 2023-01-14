@@ -39,7 +39,11 @@ const Body = () => {
         }}/>
         <button className="search-btn" onClick={
           () => {
-              setSearchClicked("true")
+              if(searchClicked === "false"){
+                setSearchClicked("true");
+              }else{
+                setSearchClicked("false");
+              }
           }
         }>Search</button>
         {/* We will not be able to edit the above input KFC value though */}
