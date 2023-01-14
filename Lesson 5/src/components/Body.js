@@ -24,12 +24,12 @@ import { useState } from "react";
 // React keeps track of all the state variables.
 
 const Body = () => {
-  let a = 10;
   let [searchTxt,setSearchText] = useState('');
   // searchTxt is the local state variable
   // we can use the searchTxt variable as a normal variable.
   // We cannot modify the searchTxt local state variable directly like searchTxt = e.target.value
   // We modify the variable only using a function
+  let [searchClicked,setSearchClicked] = useState("false");
   return (
     <>
       <div className="search-container">
@@ -37,12 +37,17 @@ const Body = () => {
           console.log(e.target.value);
           setSearchText(e.target.value);
         }}/>
-        <button className="search-btn" onClick={() => {
-          console.log(a);
-          a = 20;
-        }}>Search - {a}</button>
+        <button className="search-btn" onClick={
+          () => {
+              setSearchClicked("true")
+          }
+        }>Search</button>
         {/* We will not be able to edit the above input KFC value though */}
         <h1>{searchTxt}</h1>
+        <h1>Search Clicked : {searchClicked}</h1>
+        {/* Only the h1 component is re rendered, this is because react used reconcilication and diffing algorithm.
+        With this react knows that state of searchClicked go updated so it need to update only the h1.
+        Here react just re rendered the h1. This is why react is fast. Look the console for real time demo of reconcilication*/}
       </div>
       <div className="restaurant-list">
         {restaurantList.map((restaurant, index) => (
