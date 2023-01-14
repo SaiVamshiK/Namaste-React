@@ -25,6 +25,13 @@ We can put some variables onto that state.
 Everytime we create a local variable we use the state inside React.
 Everytime we need a local variable we create it using useState hook.
 
+In Angular we have 2 way data binding which means if we define a normal JS variable const searchtxt = "KFC".
+Then if we change it somewhere, then it gets updated.
+This is 2 way data binding.
+React does not have 2 way data binding, it has one way data binding.
+If we define a normal JS variable const searchTxt = "KFC",then it goes into input tag value={searchTxt}, but it would not get updated.
+So react says if we want to create a local state variable do it using a useState hook.
+
 TO DO:
 Implement React.Fragment type of Custom Component.
 Use : import * as Obj from '/Component.js'.

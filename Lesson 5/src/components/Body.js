@@ -14,10 +14,10 @@ import { useState } from "react";
 // The function is this useState hook is to create state variables.
 // useState() returns the array
 // Elem 0 is the variable name
-// Elem 1 is the function
+// Elem 1 is the function to update the variable
 
 const Body = () => {
-  let [searchTxt,setSearchText] = useState("KFC");
+  let [searchTxt,setSearchText] = useState('');
   // searchTxt is the local state variable
   // we can use the searchTxt variable as a normal variable.
   // We cannot modify the searchTxt local state variable directly like searchTxt = e.target.value
@@ -31,6 +31,7 @@ const Body = () => {
         }}/>
         <button className="search-btn">Search</button>
         {/* We will not be able to edit the above input KFC value though */}
+        <h1>{searchTxt}</h1>
       </div>
       <div className="restaurant-list">
         {restaurantList.map((restaurant, index) => (
