@@ -40,8 +40,10 @@ const Body = () => {
           placeholder="Search"
           value={searchTxt}
           onChange={(e) => {
-            console.log(e.target.value);
             setSearchText(e.target.value);
+            console.log(searchTxt);
+            // setState is asynchronous
+            // Good GFG article : https://www.geeksforgeeks.org/is-setstate-method-async/
           }}
         />
         <button
@@ -49,7 +51,7 @@ const Body = () => {
           onClick={() => {
             if (searchTxt !== "") {
               let newRestaurantList = restaurantList.filter((restaurant) => {
-                if (restaurant.name === searchTxt) {
+                if (restaurant.name.includes(searchTxt)) {
                   return true;
                 }
               });
