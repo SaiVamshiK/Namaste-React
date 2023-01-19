@@ -1,0 +1,38 @@
+All Components must start with the capital letters.
+2 ways to export Components.
+We can only export default one component.
+We can rename our Components as .jsx as well.
+.js or .jsx, anything can be used.
+Preferable to use .js always.
+config.js is used for maintaining constant values. Like for our static image URL's.
+
+import { Footer } from "./components/Footer";
+The above statement is not called object destructuring.
+
+<input type="text" className="search-input" placeholder="Search" value=""/>
+The above input statement in JSX does not work, meaning we will not be able to write anything inside the input box.
+Same statement will work in index.html file where we will be able to edit it.
+React uses one way data binding : We have kept a default value for the input, but from the input box we won't be able to change the search Text. In order to allow its change, we need to define a function.
+The input tag working in index.html and not working in the JSX file proves that both are not the same.
+When we write 'a' it is getting printed as KFCa, if we then write 'q' it is getting printed as KFCq. But it is not getting reflected in the input box.
+IMP REASON:
+This is because in the input box we have kept the value = {searchTxt}, when we change the input , React re renders the whole component. Because of this, since the searchTxt is still KFC it has not been changed. searchTxt never got updated there.
+
+If we want to change a variable then we cannot use normal JS variables, we need to use React kind of variables.
+React variable is kind of a state variable.
+Every component in React maintains a state.
+We can put some variables onto that state.
+Everytime we create a local variable we use the state inside React.
+Everytime we need a local variable we create it using useState hook.
+
+In Angular we have 2 way data binding which means if we define a normal JS variable const searchtxt = "KFC".
+Then if we change it somewhere, then it gets updated.
+This is 2 way data binding.
+React does not have 2 way data binding, it has one way data binding.
+If we define a normal JS variable const searchTxt = "KFC",then it goes into input tag value={searchTxt}, but it would not get updated.
+So react says if we want to create a local state variable do it using a useState hook.
+
+TO DO:
+Implement React.Fragment type of Custom Component.
+Use : import * as Obj from '/Component.js'.
+and use <Obj.Title/> 
