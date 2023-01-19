@@ -30,8 +30,9 @@ const Body = () => {
   // It is not a good place to write the API function.
   useEffect(() => {
     console.log("Use Effect Called");
-  },[searchTxt]);
-  // Now useEffect is called when there is a state change in the search text React variable.
+  },[]);
+  // [searchTxt] Now useEffect is called when there is a state change in the search text React variable.
+  // [] Now useEffect is called only on the 1st page reload.
   // [] is the dependency array.
   // useEffect() takes a callback function as parameter.
   // This callback function will be called when useEffect() wants it to be called.
