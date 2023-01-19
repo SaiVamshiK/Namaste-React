@@ -24,15 +24,20 @@ import { useState,useEffect } from "react";
 // React keeps track of all the state variables.
 
 const Body = () => {
+  let [filteredRestaurantList, setFilteredRestaurantList] =
+  useState(restaurantList);
   let [searchTxt, setSearchText] = useState("");
   // the restaurantList is the JSON ideally we get using an API Call.
   // If we write the fetch call here in the body itself, the API call is made each time the key change happens.
   // It is not a good place to write the API function.
   useEffect(() => {
     console.log("Use Effect Called");
-  },[]);
+  },[filteredRestaurantList]);
   // [searchTxt] Now useEffect is called when there is a state change in the search text React variable.
   // [] Now useEffect is called only on the 1st page reload.
+  // [filteredRestaurantList] Now useEffect's callback function is called only when there is a state change for the filteredRestaurantList variable. 
+  // So for the above dependency array having filteredRestaurantList the callback function is called only when search is hit.
+  // Because only then there is a state change for filteredRestaurantList.
   // [] is the dependency array.
   // useEffect() takes a callback function as parameter.
   // This callback function will be called when useEffect() wants it to be called.
@@ -41,8 +46,6 @@ const Body = () => {
   // But it is a bad way to call the callback function each time the re render happens.
   // To avoid calling this each time pass a dependency array into it.
   
-  let [filteredRestaurantList, setFilteredRestaurantList] =
-    useState(restaurantList);
   console.log("Body re render");
   // The above console log is called everytime a key change is detected in the input search box.
   // searchTxt is the local state variable
