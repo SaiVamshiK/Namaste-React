@@ -4,3 +4,5 @@ React is fast because of its fast DOM manipulation.
 Whole component got re rendered.
 
 When ever we refresh the state of a particular state variable, react would re render the whole component.
+Why it rerenders entire component?
+This is because the changed state variable might have changed other tags as well. So it re renders entire component where the state variable is in.
