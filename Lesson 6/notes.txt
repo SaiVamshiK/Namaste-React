@@ -17,3 +17,8 @@ swiggy.com : port 3000 mapped to /
              port 4000 mapped to /app
              port 5000 mapped to /notifications
 This is how each Microservice communicated with each other.
+
+Approach 1 : Page Loads => API call => render page.
+Approach 2 : Page Loads => render default page => API call => render updated Page.
+Approach 2 is better for user experience.
+useEffect() is the hook which we use for this.
