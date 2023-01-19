@@ -24,6 +24,9 @@ import { useState } from "react";
 // React keeps track of all the state variables.
 
 const Body = () => {
+  // the restaurantList is the JSON ideally we get using an API Call.
+  // If we write the fetch call here in the body itself, the API call is made each time the key change happens.
+  // It is not a good place to write the API function.
   let [searchTxt, setSearchText] = useState("");
   let [filteredRestaurantList, setFilteredRestaurantList] =
     useState(restaurantList);
