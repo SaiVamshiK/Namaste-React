@@ -27,6 +27,8 @@ const Body = () => {
   let [searchTxt, setSearchText] = useState("");
   let [filteredRestaurantList, setFilteredRestaurantList] =
     useState(restaurantList);
+  console.log("Body re render");
+  // The above console log is called everytime a key change is detected in the input search box.
   // searchTxt is the local state variable
   // we can use the searchTxt variable as a normal variable.
   // We cannot modify the searchTxt local state variable directly like searchTxt = e.target.value
