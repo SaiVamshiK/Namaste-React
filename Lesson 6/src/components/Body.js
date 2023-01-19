@@ -32,7 +32,13 @@ const Body = () => {
   // It is not a good place to write the API function.
   useEffect(() => {
     console.log("Use Effect Called");
-  },[filteredRestaurantList]);
+  },[]);
+  // SUMMARY:
+  // [] : useEffect's callback function is called only once AFTER the initial render.
+  // [searchTxt] : useEffect's callback function is called once AFTER the initial render, and subsequently after every rerender (when the searchTxt changes).
+
+  // [] : now the useEffect's callback function is called only once, when the page reloads.
+  // The callback function is called just ONCE AND AFTER THE INITIAL RENDER IS DONE.
   // [searchTxt] Now useEffect is called when there is a state change in the search text React variable.
   // [] Now useEffect is called only on the 1st page reload.
   // [filteredRestaurantList] Now useEffect's callback function is called only when there is a state change for the filteredRestaurantList variable. 
