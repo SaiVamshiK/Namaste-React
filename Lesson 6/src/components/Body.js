@@ -1,6 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { restaurantList } from "../config";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 // What is state
 // Whenever we create a local variables we use state variables.
@@ -27,6 +27,16 @@ const Body = () => {
   // the restaurantList is the JSON ideally we get using an API Call.
   // If we write the fetch call here in the body itself, the API call is made each time the key change happens.
   // It is not a good place to write the API function.
+  useEffect(() => {
+    console.log("Use Effect Called");
+  },[]);
+  // [] is the dependency array.
+  // useEffect() takes a callback function as parameter.
+  // This callback function will be called when useEffect() wants it to be called.
+  // Whenever the Body Component re renders, the callback function is called.
+  // The Body Component is re rendered when there is a state variable change or props changes.
+  // But it is a bad way to call the callback function each time the re render happens.
+  // To avoid calling this each time pass a dependency array into it.
   let [searchTxt, setSearchText] = useState("");
   let [filteredRestaurantList, setFilteredRestaurantList] =
     useState(restaurantList);
