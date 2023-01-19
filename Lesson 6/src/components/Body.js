@@ -31,8 +31,18 @@ const Body = () => {
   // If we write the fetch call here in the body itself, the API call is made each time the key change happens.
   // It is not a good place to write the API function.
   useEffect(() => {
-    console.log("Use Effect Called");
+    console.log("API CALL here");
+    // best way to call an API.
+    // This function is called only ONCE after initial render.
+    getRestaurants();
   },[]);
+
+  async function getRestaurants() {
+    const response = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING');
+    const json = await response.json();
+    console.log("JSON: "+json);
+  }
+   
   // SUMMARY:
   // [] : useEffect's callback function is called only once AFTER the initial render.
   // [searchTxt] : useEffect's callback function is called once AFTER the initial render, and subsequently after every rerender (when the searchTxt changes).
