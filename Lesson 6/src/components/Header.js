@@ -4,6 +4,7 @@ export const Header = () => {
   const [title,setTitle] = useState('Food Villa');
   return (
     <div className="header">
+      {console.log("rerender")}
       <Title />
       <h1>{title}</h1>
       <button onClick={() => {
