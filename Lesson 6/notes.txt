@@ -6,3 +6,14 @@ Whole component got re rendered.
 When ever we refresh the state of a particular state variable, react would re render the whole component.
 Why it rerenders entire component?
 This is because the changed state variable might have changed other tags as well. So it re renders entire component where the state variable is in.
+
+Microservices Application :
+Uber has 100's of Microservices in it.
+Microservice : Decoupling all applications to build a big project.
+Microservice architecture helps in separation of concerns.
+The Food villa application we have made is a UI Microservice.
+How all the Microservices are connected?
+swiggy.com : port 3000 mapped to /
+             port 4000 mapped to /app
+             port 5000 mapped to /notifications
+This is how each Microservice communicated with each other.
