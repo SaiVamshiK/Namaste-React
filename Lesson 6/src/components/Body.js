@@ -73,6 +73,11 @@ const Body = () => {
   // we can use the searchTxt variable as a normal variable.
   // We cannot modify the searchTxt local state variable directly like searchTxt = e.target.value
   // We modify the variable only using a function
+  if(!restaurantList) {
+    // Early return
+    return null;
+  }
+
   return restaurantList.length == 0?(
     <>
       <Shimmer/>
