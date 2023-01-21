@@ -1,5 +1,4 @@
 import RestaurantCard from "./RestaurantCard";
-import { restaurantList } from "../config";
 import { useState,useEffect } from "react";
 
 // What is state
@@ -25,7 +24,7 @@ import { useState,useEffect } from "react";
 
 const Body = () => {
   let [filteredRestaurantList, setFilteredRestaurantList] =
-  useState(restaurantList);
+  useState([]);
   let [searchTxt, setSearchText] = useState("");
   // the restaurantList is the JSON ideally we get using an API Call.
   // If we write the fetch call here in the body itself, the API call is made each time the key change happens.
@@ -41,7 +40,9 @@ const Body = () => {
     const response = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING');
     // const json = await response.json();
     const json = await response.json();
-    console.log(json);
+    const data = json.data.cards[2].data.data.cards;
+    console.log(data);
+    setFilteredRestaurantList(data);
   }
    
   // SUMMARY:
