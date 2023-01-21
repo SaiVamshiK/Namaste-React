@@ -78,6 +78,14 @@ const Body = () => {
     return null;
   }
 
+  if(filteredRestaurantList.length === 0){
+    return (
+      <>
+        <h1>No Restaurants Found</h1>
+      </>
+    );
+  }
+
   return restaurantList.length == 0?(
     <>
       <Shimmer/>
