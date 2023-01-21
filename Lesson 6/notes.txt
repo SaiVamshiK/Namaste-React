@@ -25,3 +25,6 @@ useEffect() is the hook which we use for this.
 
 CORS error happens because our browser is blocking localhost from accessing the swiggy.com's API.
 Install the CORS chrome plugin so that browser would not complain.
+
+Inside the JSX we can write Javascript expressions not statements in {}.
+
