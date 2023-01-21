@@ -28,3 +28,5 @@ Install the CORS chrome plugin so that browser would not complain.
 
 Inside the JSX we can write Javascript expressions not statements in {}.
 
+Diff algorithm is written in the core of React.
+React native also uses the same diff algorithm.
