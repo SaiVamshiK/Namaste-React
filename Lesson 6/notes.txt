@@ -22,3 +22,6 @@ Approach 1 : Page Loads => API call => render page.
 Approach 2 : Page Loads => render default page => API call => render updated Page.
 Approach 2 is better for user experience.
 useEffect() is the hook which we use for this.
+
+CORS error happens because our browser is blocking localhost from accessing the swiggy.com's API.
+Install the CORS chrome plugin so that browser would not complain.
