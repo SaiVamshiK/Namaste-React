@@ -1,5 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState,useEffect } from "react";
+import { Shimmer } from "./ShimmerUI";
 
 // What is state
 // Whenever we create a local variables we use state variables.
@@ -70,7 +71,11 @@ const Body = () => {
   // we can use the searchTxt variable as a normal variable.
   // We cannot modify the searchTxt local state variable directly like searchTxt = e.target.value
   // We modify the variable only using a function
-  return (
+  return filteredRestaurantList.length == 0?(
+    <>
+      <Shimmer/>
+    </>
+  ):(
     <>
       <div className="search-container">
         <input
