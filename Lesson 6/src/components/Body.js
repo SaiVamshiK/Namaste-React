@@ -31,7 +31,6 @@ const Body = () => {
   // If we write the fetch call here in the body itself, the API call is made each time the key change happens.
   // It is not a good place to write the API function.
   useEffect(() => {
-    console.log("API CALL here");
     // best way to call an API.
     // This function is called only ONCE after initial render.
     getRestaurants();
@@ -55,7 +54,6 @@ const Body = () => {
     // const json = await response.json();
     const json = await response.json();
     const data = json?.data?.cards[2]?.data?.data?.cards;
-    console.log(data);
     setFilteredRestaurantList(data);
     setRestaurantList(data);
   }
@@ -117,7 +115,7 @@ const Body = () => {
             onClick={() => {
               if (searchTxt !== "") {
                 let newRestaurantList = restaurantList.filter((restaurant) => {
-                  if (restaurant.data.name.includes(searchTxt)) {
+                  if (restaurant.data.name.toLowerCase().includes(searchTxt.toLowerCase())) {
                     return true;
                   }
                 });
