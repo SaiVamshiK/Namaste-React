@@ -1,5 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Shimmer } from "./ShimmerUI";
 
 // What is state
@@ -24,9 +24,8 @@ import { Shimmer } from "./ShimmerUI";
 // React keeps track of all the state variables.
 
 const Body = () => {
-  let [filteredRestaurantList, setFilteredRestaurantList] =
-  useState([]);
-  let [restaurantList,setRestaurantList] = useState([]);
+  let [filteredRestaurantList, setFilteredRestaurantList] = useState([]);
+  let [restaurantList, setRestaurantList] = useState([]);
   let [searchTxt, setSearchText] = useState("");
   // the restaurantList is the JSON ideally we get using an API Call.
   // If we write the fetch call here in the body itself, the API call is made each time the key change happens.
@@ -36,10 +35,12 @@ const Body = () => {
     // best way to call an API.
     // This function is called only ONCE after initial render.
     getRestaurants();
-  },[]);
+  }, []);
 
   async function getRestaurants() {
-    const response = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING');
+    const response = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+    );
     // const json = await response.json();
     const json = await response.json();
     const data = json?.data?.cards[2]?.data?.data?.cards;
@@ -47,7 +48,7 @@ const Body = () => {
     setFilteredRestaurantList(data);
     setRestaurantList(data);
   }
-   
+
   // SUMMARY:
   // [] : useEffect's callback function is called only once AFTER the initial render.
   // [searchTxt] : useEffect's callback function is called once AFTER the initial render, and subsequently after every rerender (when the searchTxt changes).
@@ -56,7 +57,7 @@ const Body = () => {
   // The callback function is called just ONCE AND AFTER THE INITIAL RENDER IS DONE.
   // [searchTxt] Now useEffect is called when there is a state change in the search text React variable.
   // [] Now useEffect is called only on the 1st page reload.
-  // [filteredRestaurantList] Now useEffect's callback function is called only when there is a state change for the filteredRestaurantList variable. 
+  // [filteredRestaurantList] Now useEffect's callback function is called only when there is a state change for the filteredRestaurantList variable.
   // So for the above dependency array having filteredRestaurantList the callback function is called only when search is hit.
   // Because only then there is a state change for filteredRestaurantList.
   // [] is the dependency array.
@@ -66,73 +67,69 @@ const Body = () => {
   // The Body Component is re rendered when there is a state variable change or props changes.
   // But it is a bad way to call the callback function each time the re render happens.
   // To avoid calling this each time pass a dependency array into it.
-  
+
   console.log("Body re render");
   // The above console log is called everytime a key change is detected in the input search box.
   // searchTxt is the local state variable
   // we can use the searchTxt variable as a normal variable.
   // We cannot modify the searchTxt local state variable directly like searchTxt = e.target.value
   // We modify the variable only using a function
-  if(!restaurantList) {
+  if (!restaurantList) {
     // Early return
     return null;
   }
-
-  if(filteredRestaurantList.length === 0){
+  console.log("Restaurant ListSize: " + restaurantList.length);
+  if (restaurantList.length == 0) {
     return (
       <>
-        <h1>No Restaurants Found</h1>
+        <Shimmer />
+      </>
+    );
+  } else {
+    return (
+      <>
+        <div className="search-container">
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search"
+            value={searchTxt}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+              console.log(searchTxt);
+              // setState is asynchronous
+              // Good GFG article : https://www.geeksforgeeks.org/is-setstate-method-async/
+            }}
+          />
+          <button
+            className="search-btn"
+            onClick={() => {
+              if (searchTxt !== "") {
+                let newRestaurantList = restaurantList.filter((restaurant) => {
+                  if (restaurant.data.name.includes(searchTxt)) {
+                    return true;
+                  }
+                });
+                setFilteredRestaurantList(newRestaurantList);
+              } else {
+                setFilteredRestaurantList(restaurantList);
+              }
+            }}
+          >
+            Search
+          </button>
+          {/* We will not be able to edit the above input KFC value though */}
+          {/* Only the h1 component is re rendered, this is because react used reconcilication and diffing algorithm.
+        With this react knows that state of searchClicked go updated so it need to update only the h1.
+        Here react just re rendered the h1. This is why react is fast. Look the console for real time demo of reconcilication*/}
+        </div>
+        <div className="restaurant-list">
+          {filteredRestaurantList.map((restaurant, index) => (
+            <RestaurantCard restaurant={restaurant} key={index} />
+          ))}
+        </div>
       </>
     );
   }
-
-  return restaurantList.length == 0?(
-    <>
-      <Shimmer/>
-    </>
-  ):(
-    <>
-      <div className="search-container">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search"
-          value={searchTxt}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-            console.log(searchTxt);
-            // setState is asynchronous
-            // Good GFG article : https://www.geeksforgeeks.org/is-setstate-method-async/
-          }}
-        />
-        <button
-          className="search-btn"
-          onClick={() => {
-            if (searchTxt !== "") {
-              let newRestaurantList = restaurantList.filter((restaurant) => {
-                if (restaurant.data.name.includes(searchTxt)) {
-                  return true;
-                }
-              });
-              setFilteredRestaurantList(newRestaurantList);
-            }else{
-              setFilteredRestaurantList(restaurantList);
-            }
-          }}
-        >
-          Search
-        </button>
-        {/* We will not be able to edit the above input KFC value though */}
-        {/* Only the h1 component is re rendered, this is because react used reconcilication and diffing algorithm.
-        With this react knows that state of searchClicked go updated so it need to update only the h1.
-        Here react just re rendered the h1. This is why react is fast. Look the console for real time demo of reconcilication*/}
-      </div>
-      <div className="restaurant-list">
-        {filteredRestaurantList.map((restaurant, index) => (
-          <RestaurantCard restaurant={restaurant} key={index} />
-        ))}
-      </div>
-    </>
-  );
 };
 export default Body;
