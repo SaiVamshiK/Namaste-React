@@ -26,6 +26,7 @@ import { Shimmer } from "./ShimmerUI";
 const Body = () => {
   let [filteredRestaurantList, setFilteredRestaurantList] =
   useState([]);
+  let [restaurantList,setRestaurantList] = useState([]);
   let [searchTxt, setSearchText] = useState("");
   // the restaurantList is the JSON ideally we get using an API Call.
   // If we write the fetch call here in the body itself, the API call is made each time the key change happens.
@@ -44,6 +45,7 @@ const Body = () => {
     const data = json?.data?.cards[2]?.data?.data?.cards;
     console.log(data);
     setFilteredRestaurantList(data);
+    setRestaurantList(data);
   }
    
   // SUMMARY:
@@ -71,7 +73,7 @@ const Body = () => {
   // we can use the searchTxt variable as a normal variable.
   // We cannot modify the searchTxt local state variable directly like searchTxt = e.target.value
   // We modify the variable only using a function
-  return filteredRestaurantList.length == 0?(
+  return restaurantList.length == 0?(
     <>
       <Shimmer/>
     </>
@@ -95,7 +97,7 @@ const Body = () => {
           onClick={() => {
             if (searchTxt !== "") {
               let newRestaurantList = restaurantList.filter((restaurant) => {
-                if (restaurant.name.includes(searchTxt)) {
+                if (restaurant.data.name.includes(searchTxt)) {
                   return true;
                 }
               });
