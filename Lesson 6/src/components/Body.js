@@ -37,6 +37,17 @@ const Body = () => {
     getRestaurants();
   }, []);
 
+  let [isFilterEmpty,setIsFilterEmpty] = useState(false);
+
+  useEffect(() => {
+    console.log("Filterred restaurant ListSize: "+filteredRestaurantList.length);
+    if(filteredRestaurantList.length === 0){
+      setIsFilterEmpty(true);
+    }else{
+      setIsFilterEmpty(false);
+    }
+  },[filteredRestaurantList]);
+
   async function getRestaurants() {
     const response = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
@@ -86,48 +97,6 @@ const Body = () => {
       </>
     );
   } else {
-    if (filteredRestaurantList.length == 0) {
-      return (
-        <>
-          <div className="search-container">
-            <input
-              type="text"
-              className="search-input"
-              placeholder="Search"
-              value={searchTxt}
-              onChange={(e) => {
-                setSearchText(e.target.value);
-                console.log(searchTxt);
-                // setState is asynchronous
-                // Good GFG article : https://www.geeksforgeeks.org/is-setstate-method-async/
-              }}
-            />
-            <button
-              className="search-btn"
-              onClick={() => {
-                if (searchTxt !== "") {
-                  let newRestaurantList = restaurantList.filter(
-                    (restaurant) => {
-                      if (restaurant.data.name.includes(searchTxt)) {
-                        return true;
-                      }
-                    }
-                  );
-                  setFilteredRestaurantList(newRestaurantList);
-                } else {
-                  setFilteredRestaurantList(restaurantList);
-                }
-              }}
-            >
-              Search
-            </button>
-          </div>
-          <div className="restaurant-list">
-              <h1>No Restautants Found</h1>
-          </div>
-        </>
-      );
-    }
     return (
       <>
         <div className="search-container">
@@ -166,9 +135,10 @@ const Body = () => {
         Here react just re rendered the h1. This is why react is fast. Look the console for real time demo of reconcilication*/}
         </div>
         <div className="restaurant-list">
-          {filteredRestaurantList.map((restaurant, index) => (
+          {isFilterEmpty?<><h1>No restaurants found</h1></>:filteredRestaurantList.map((restaurant, index) => (
             <RestaurantCard restaurant={restaurant} key={index} />
           ))}
+          {}
         </div>
       </>
     );
