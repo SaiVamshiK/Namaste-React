@@ -1,12 +1,35 @@
 import RestaurantCard from "./RestaurantCard";
-import { restaurantList } from "../config";
-import { useState } from "react";
+import { ShimmerUi } from "./ShimmerUI";
+import { CDN_URL } from "../config";
+import { useEffect, useState } from "react";
 
 const Body = () => {
   let [searchTxt, setSearchText] = useState("");
-  let [filteredRestaurantList, setFilteredRestaurantList] =
-    useState(restaurantList);
-  return (
+  let [filteredRestaurantList, setFilteredRestaurantList] = useState([]);
+  let [allRestaurants, setAllRestaurants] = useState([]);
+  let [isFilteredRestautantsEmpty, setIsFilteredRestautantsEmpty] =
+    useState(true);
+
+  useEffect(() => {
+    getRestaurants();
+  }, []);
+
+  async function getRestaurants() {
+    const data = await fetch(CDN_URL);
+    const json = await data.json();
+    const restaurants = json?.data?.cards[2]?.data?.data?.cards;
+    setAllRestaurants(restaurants);
+    setFilteredRestaurantList(restaurants);
+    if (restaurants.length !== 0) {
+      setIsFilteredRestautantsEmpty(false);
+    }else{
+        setIsFilteredRestautantsEmpty(true);
+    }
+  }
+
+  return allRestaurants.length === 0 ? (
+    <ShimmerUi />
+  ) : (
     <>
       <div className="search-container">
         <input
@@ -16,32 +39,48 @@ const Body = () => {
           value={searchTxt}
           onChange={(e) => {
             setSearchText(e.target.value);
-            console.log(searchTxt);
           }}
         />
         <button
           className="search-btn"
           onClick={() => {
-            if (searchTxt !== "") {
-              let newRestaurantList = restaurantList.filter((restaurant) => {
-                if (restaurant.name.includes(searchTxt)) {
-                  return true;
+            setIsFilteredRestautantsEmpty(false);
+            if (searchTxt.length !== 0) {
+              let newFilteredRestaurantList = allRestaurants.filter(
+                (restaurant) => {
+                  if (
+                    restaurant.data.name
+                      .toLowerCase()
+                      .includes(searchTxt.toLowerCase())
+                  ) {
+                    return true;
+                  }
                 }
-              });
-              setFilteredRestaurantList(newRestaurantList);
+              );
+              
+              setFilteredRestaurantList(newFilteredRestaurantList);
+              if(newFilteredRestaurantList.length === 0){
+                setIsFilteredRestautantsEmpty(true);
+              }
             } else {
-              setFilteredRestaurantList(restaurantList);
+              setFilteredRestaurantList(allRestaurants);
             }
           }}
         >
           Search
         </button>
       </div>
-      <div className="restaurant-list">
-        {filteredRestaurantList.map((restaurant, index) => (
-          <RestaurantCard restaurant={restaurant} key={index} />
-        ))}
-      </div>
+      {isFilteredRestautantsEmpty ? (
+        <>
+            <h1>No restaurants Found</h1>
+        </>
+      ) : (
+        <div className="restaurant-list">
+          {filteredRestaurantList.map((restaurant, id) => {
+            return <RestaurantCard restaurant={restaurant} key={id} />;
+          })}
+        </div>
+      )}
     </>
   );
 };
