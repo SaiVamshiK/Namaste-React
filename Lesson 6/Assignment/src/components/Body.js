@@ -10,6 +10,9 @@ const Body = () => {
   let [isFilteredRestautantsEmpty, setIsFilteredRestautantsEmpty] =
     useState(true);
 
+  if(!allRestaurants || !filteredRestaurantList){
+    return null;
+  }
   useEffect(() => {
     getRestaurants();
   }, []);
