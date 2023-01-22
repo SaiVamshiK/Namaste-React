@@ -1,5 +1,13 @@
+import { useState } from "react";
 import Title from "./Title";
+
+function isLoggedIn() {
+  return false;
+}
+
 export const Header = () => {
+  let [isLogin, setIsLogin] = useState(isLoggedIn());
+
   return (
     <div className="header">
       <Title />
@@ -11,6 +19,27 @@ export const Header = () => {
           <li>Cart</li>
         </ul>
       </div>
+      {!isLogin ? (
+        <>
+          <button
+            onClick={() => {
+              setIsLogin(true);
+            }}
+          >
+            Login
+          </button>
+        </>
+      ) : (
+        <>
+          <button
+            onClick={() => {
+              setIsLogin(false);
+            }}
+          >
+            Logout
+          </button>
+        </>
+      )}
     </div>
   );
 };
