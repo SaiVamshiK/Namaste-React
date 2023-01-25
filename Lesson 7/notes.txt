@@ -1,0 +1,2 @@
+Order of execution while useEffect's callback function is called.
+First the entire body component is re rendered only after that the corresponding useEffect's callback function is called.

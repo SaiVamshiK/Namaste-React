@@ -24,6 +24,7 @@ import { Shimmer } from "./ShimmerUI";
 // React keeps track of all the state variables.
 
 const Body = () => {
+  let [temp,setTemp] = useState([]);
   let [filteredRestaurantList, setFilteredRestaurantList] = useState([]);
   let [restaurantList, setRestaurantList] = useState([]);
   let [searchTxt, setSearchText] = useState("");
@@ -58,6 +59,10 @@ const Body = () => {
     setRestaurantList(data);
   }
 
+  useEffect(() => {
+    console.log('Temp Render Called');
+  },[temp]);
+
   // SUMMARY:
   // [] : useEffect's callback function is called only once AFTER the initial render.
   // [searchTxt] : useEffect's callback function is called once AFTER the initial render, and subsequently after every rerender (when the searchTxt changes).
@@ -87,7 +92,6 @@ const Body = () => {
     // Early return
     return null;
   }
-  console.log("Restaurant ListSize: " + restaurantList.length);
   if (restaurantList.length == 0) {
     return (
       <>
@@ -97,6 +101,12 @@ const Body = () => {
   } else {
     return (
       <>
+        {console.log("Inside JSX")}
+        <button className="search-btn" onClick={() => {
+          setTemp([1,2,3]);
+        }}>
+          Temp button
+        </button>
         <div className="search-container">
           <input
             type="text"
