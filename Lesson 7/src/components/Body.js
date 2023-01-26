@@ -57,6 +57,7 @@ const Body = () => {
     const json = await response.json();
     const data = json?.data?.cards[2]?.data?.data?.cards;
     setFilteredRestaurantList(data);
+    console.log(data);
     setRestaurantList(data);
   }
 
@@ -92,35 +93,7 @@ const Body = () => {
   if (restaurantList.length == 0) {
     return (
       <>
-        <div className="restaurant-list">
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-          <Shimmer />
-        </div>
+        <Shimmer/>
       </>
     );
   } else {

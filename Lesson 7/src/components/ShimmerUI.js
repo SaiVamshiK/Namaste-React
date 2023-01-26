@@ -1,19 +1,11 @@
 import RestaurantCard from "./RestaurantCard";
 
 export const Shimmer = () => {
-    let restaurant = {
-        isShimmer : true,
-        data : {
-            cloudinaryImageId : null,
-            name : null,
-            cuisines : null,
-            avgRating : null,
-        }
-    };
+    const arr = [1,2,3,4,5,6,7,8,9,10];
     return (
-        <>
-            <RestaurantCard restaurant={restaurant}/>
-        </>
+        <div className="restaurant-list">
+            {arr.map((elem,id) => <div className="shimmer-card" key={id}></div>)}
+        </div>
     );
 }
 
