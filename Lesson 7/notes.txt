@@ -5,3 +5,10 @@ useEffect(()=>{
 
 })
 Then the callback function will be called each time the component renders.
+
+REACT SAYS NEVER DEFINE A COMPONENT INSIDE ANOTHER COMPONENT.
+BECAUSE WHENEVER THE PARENT COMPONENT IS RE RENDERED, THE CHILD COMPONENT AGAIN GETS CREATED.
+Hooks:
+NEVER WRITE A useState() inside if else and for loop.
+NEVER USE useState() outside a Functional Component.
+useState is a hook which allows us to create local state variables for the functional component.
