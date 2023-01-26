@@ -13,3 +13,6 @@ NEVER WRITE A useState() inside if else and for loop.
 NEVER USE useState() outside a Functional Component.
 useState is a hook which allows us to create local state variables for the functional component.
 CDN is a better way though to get images rendered in our application.
+
+React - Router :
+Install it: npm install react-router-dom
