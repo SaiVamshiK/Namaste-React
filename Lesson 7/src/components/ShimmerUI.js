@@ -1,7 +1,18 @@
+import RestaurantCard from "./RestaurantCard";
+
 export const Shimmer = () => {
+    let restaurant = {
+        isShimmer : true,
+        data : {
+            cloudinaryImageId : null,
+            name : null,
+            cuisines : null,
+            avgRating : null,
+        }
+    };
     return (
         <>
-            <h1>Please Wait, Loading...</h1>
+            <RestaurantCard restaurant={restaurant}/>
         </>
     );
 }

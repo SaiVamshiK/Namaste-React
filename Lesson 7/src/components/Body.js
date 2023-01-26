@@ -36,16 +36,18 @@ const Body = () => {
     getRestaurants();
   }, []);
 
-  let [isFilterEmpty,setIsFilterEmpty] = useState(false);
+  let [isFilterEmpty, setIsFilterEmpty] = useState(false);
 
   useEffect(() => {
-    console.log("Filterred restaurant ListSize: "+filteredRestaurantList.length);
-    if(filteredRestaurantList.length === 0){
+    console.log(
+      "Filterred restaurant ListSize: " + filteredRestaurantList?.length
+    );
+    if (filteredRestaurantList?.length === 0) {
       setIsFilterEmpty(true);
-    }else{
+    } else {
       setIsFilterEmpty(false);
     }
-  },[filteredRestaurantList]);
+  }, [filteredRestaurantList]);
 
   async function getRestaurants() {
     const response = await fetch(
@@ -90,7 +92,35 @@ const Body = () => {
   if (restaurantList.length == 0) {
     return (
       <>
-        <Shimmer />
+        <div className="restaurant-list">
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+        </div>
       </>
     );
   } else {
@@ -114,7 +144,11 @@ const Body = () => {
             onClick={() => {
               if (searchTxt !== "") {
                 let newRestaurantList = restaurantList.filter((restaurant) => {
-                  if (restaurant.data.name.toLowerCase().includes(searchTxt.toLowerCase())) {
+                  if (
+                    restaurant.data.name
+                      .toLowerCase()
+                      .includes(searchTxt.toLowerCase())
+                  ) {
                     return true;
                   }
                 });
@@ -132,9 +166,15 @@ const Body = () => {
         Here react just re rendered the h1. This is why react is fast. Look the console for real time demo of reconcilication*/}
         </div>
         <div className="restaurant-list">
-          {isFilterEmpty?<><h1>No restaurants found</h1></>:filteredRestaurantList.map((restaurant, index) => (
-            <RestaurantCard restaurant={restaurant} key={index} />
-          ))}
+          {isFilterEmpty ? (
+            <>
+              <h1>No restaurants found</h1>
+            </>
+          ) : (
+            filteredRestaurantList.map((restaurant, index) => (
+              <RestaurantCard restaurant={restaurant} key={index} />
+            ))
+          )}
           {}
         </div>
       </>
