@@ -16,3 +16,6 @@ CDN is a better way though to get images rendered in our application.
 
 React - Router :
 Install it: npm install react-router-dom
+
+Now if we go to /about we must be redirected to the about page.
+For that we need to create a React Router Configuration.
